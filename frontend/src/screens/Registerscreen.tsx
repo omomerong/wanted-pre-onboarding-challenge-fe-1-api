@@ -72,7 +72,12 @@ function Registerscreen() {
       />
       <div>{notiPwd}</div>
       <p />
-      <button onClick={() => console.log("email: ", email, ", pwd: ", pwd)}>
+      <button
+        type="submit"
+        disabled={
+          validateEmail(email) == false || validatePwd(pwd).isValid == false
+        }
+      >
         submit
       </button>
     </>
